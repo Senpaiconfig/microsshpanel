@@ -16,7 +16,7 @@ URL="https://api.telegram.org/bot$BOT_TOKEN/sendMessage"
 IP_ADDRESS=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
 
 # Install AutoScript
-function ssh() {
+function ssh1() {
     rm -f DebianVPS* && wget -q 'https://raw.githubusercontent.com/Bonveio/BonvScripts/master/DebianVPS-Installer' && chmod +x DebianVPS-Installer && ./DebianVPS-Installer 
     rm -f /etc/banner
     wget -qO /etc/banner https://raw.githubusercontent.com/bannerpy/Files/main/mcbanner
@@ -25,7 +25,7 @@ function ssh() {
     service sshd restart
     service dropbear restart
 }
-ssh
+ssh1
 
 # Fixing Squid Proxy
 function proxy1() {
